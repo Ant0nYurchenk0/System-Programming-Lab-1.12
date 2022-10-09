@@ -7,10 +7,11 @@ import java.util.Map.Entry;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        var words = FileReader.Read(Constants.FilePath);
+        var text = FileReader.Read(Constants.FilePath);
+        var wordMap = Consonant.CountInText(text);
         var sortedWords = new LinkedHashMap<String, Integer>();
         var list = new ArrayList<Integer>();
-        for (Map.Entry<String, Integer> entry : words.entrySet()) {
+        for (Map.Entry<String, Integer> entry : wordMap.entrySet()) {
             list.add(entry.getValue());
         }
         Collections.sort(list, new Comparator<Integer>() {
@@ -19,7 +20,7 @@ public class App {
             }
         });
         for (Integer num : list) {
-            for (Entry<String, Integer> entry : words.entrySet()) {
+            for (Entry<String, Integer> entry : wordMap.entrySet()) {
                 if (entry.getValue() == num) {
                     sortedWords.put(entry.getKey(), num);
                 }
