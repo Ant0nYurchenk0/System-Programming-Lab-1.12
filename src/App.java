@@ -4,6 +4,7 @@ import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Objects;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -21,7 +22,7 @@ public class App {
         });
         for (Integer num : list) {
             for (Entry<String, Integer> entry : wordMap.entrySet()) {
-                if (entry.getValue() == num) {
+                if (Objects.equals(entry.getValue(), num)) {
                     sortedWords.put(entry.getKey(), num);
                 }
             }

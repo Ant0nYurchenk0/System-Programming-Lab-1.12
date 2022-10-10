@@ -16,7 +16,7 @@ public class Consonant {
     for (String word : words) {
       var wordToLower = word.toLowerCase();
       if (!wordMap.containsKey(word))
-        if(wordToLower != ""){
+        if(!"".equals(wordToLower)){
           wordMap.put(wordToLower, CountInWord(wordToLower));
         }
     }

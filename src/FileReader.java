@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class FileReader {
   public static String Read(String path){
     try {
-      File file = new File(path);
-      Scanner reader = new Scanner(file);
+      var file = new File(path);
+      var reader = new Scanner(file);
       var fileData = new StringBuilder();
       while (reader.hasNextLine()) {
         fileData.append( " "+reader.nextLine());
